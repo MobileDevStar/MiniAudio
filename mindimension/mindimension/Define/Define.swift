@@ -34,11 +34,11 @@ let HEADER_VIEW_COLOR: String = "#8BB5C6"                // color of section vie
 let CELL_WIDTH_HEIGHT_RATIO: CGFloat = 1.33
 
 
-let COLLECTION_VIEW_LEFT_MARGIN: CGFloat = 30.0           // Collection View Left Margin
-let COLLECTION_VIEW_RIGHT_MARGIN: CGFloat = 30.0          // Collection View Right Margin
+let COLLECTION_VIEW_LEFT_MARGIN: CGFloat = 10.0           // Collection View Left Margin
+let COLLECTION_VIEW_RIGHT_MARGIN: CGFloat = 10.0          // Collection View Right Margin
 
-let CELL_MIN_SPACE: CGFloat = 30.0                       // Card Internal min space
-let COLLECTION_LINE_SPACE: CGFloat = 30.0                // Collection min line space
+let CELL_MIN_SPACE: CGFloat = 0.0                       // Card Internal min space
+let COLLECTION_LINE_SPACE: CGFloat = 0.0                // Collection min line space
 
 let IPHONE_PORT_COLS = 2                                 // iPhone portrait columns
 let IPHONE_LAND_COLS = 3                                 // iPhone landscape columns

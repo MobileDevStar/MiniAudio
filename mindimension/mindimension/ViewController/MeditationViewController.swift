@@ -12,20 +12,22 @@ class MeditationViewController: MusicViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Do any additional setup after loading the view.
         vcType = MEDITATION_MUSIC_VC
         createMusicData()
+        
+        collectionView.contentInset = collectionInsets
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        reLayout(width: self.view.bounds.width)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        reLayout(width: size.width)
     }
-    */
 
 }

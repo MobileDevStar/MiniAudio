@@ -47,33 +47,85 @@ class MusicViewController: UIViewController {
         
         let cgCols = CGFloat(cols)
         
-        if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.minimumLineSpacing = COLLECTION_LINE_SPACE
-            
-            flowLayout.minimumInteritemSpacing = CELL_MIN_SPACE
-            
-            let itemWidth: CGFloat = (width - CELL_MIN_SPACE * (cgCols - 1 ) - COLLECTION_VIEW_LEFT_MARGIN - COLLECTION_VIEW_RIGHT_MARGIN) / cgCols
-            
-            flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth * CELL_WIDTH_HEIGHT_RATIO)
+        if self.collectionView != nil {
+            if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                flowLayout.minimumLineSpacing = COLLECTION_LINE_SPACE
+                
+                flowLayout.minimumInteritemSpacing = CELL_MIN_SPACE
+                
+                let itemWidth: CGFloat = (width - CELL_MIN_SPACE * (cgCols - 1 ) - COLLECTION_VIEW_LEFT_MARGIN - COLLECTION_VIEW_RIGHT_MARGIN) / cgCols
+                
+                flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth * CELL_WIDTH_HEIGHT_RATIO)
+            }
         }
     }
     
     func createMusicData() {
-        let music1 = Music(type: 1, title: "Running in the Forest", path: "", locked: false, image: "music1_1.jpg")
-        let music2 = Music(type: 1, title: "Running by the Shore", path: "", locked: true, image: "music1_2.jpg")
-        let music3 = Music(type: 1, title: "Running by the Sea", path: "", locked: true, image: "music2_1.jpg")
-        let music4 = Music(type: 1, title: "Running in the Wind", path: "", locked: true, image: "music3_1.jpg")
-        
-        let music5 = Music(type: 1, title: "Running in the Snow", path: "", locked: true, image: "music2_2.jpg")
-        let music6 = Music(type: 1, title: "Running in the Desert", path: "", locked: true, image: "music1_3.jpg")
-        
-        recommendedMusics.append(music1)
-        recommendedMusics.append(music2)
-        recommendedMusics.append(music3)
-        recommendedMusics.append(music4)
-        
-        lockedMusics.append(music5)
-        lockedMusics.append(music6)
+        if vcType == ALL_MUSIC_VC {
+            let music1 = Music(type: 1, title: "Running in the Forest", path: "", locked: false, image: "music1_1.jpg")
+            let music2 = Music(type: 1, title: "Running by the Shore", path: "", locked: true, image: "music1_2.jpg")
+            let music3 = Music(type: 1, title: "Running by the Sea", path: "", locked: true, image: "music2_1.jpg")
+            let music4 = Music(type: 1, title: "Running in the Wind", path: "", locked: true, image: "music3_1.jpg")
+            
+            let music5 = Music(type: 1, title: "Running in the Snow", path: "", locked: true, image: "music2_2.jpg")
+            let music6 = Music(type: 1, title: "Running in the Desert", path: "", locked: true, image: "music1_3.jpg")
+            
+            recommendedMusics.append(music1)
+            recommendedMusics.append(music2)
+            recommendedMusics.append(music3)
+            recommendedMusics.append(music4)
+            
+            lockedMusics.append(music5)
+            lockedMusics.append(music6)
+        } else if vcType == RUNNING_MUSIC_VC {
+            let music1 = Music(type: 1, title: "test1", path: "", locked: false, image: "music2_1.jpg")
+            let music2 = Music(type: 1, title: "test2", path: "", locked: false, image: "music2_2.jpg")
+            let music3 = Music(type: 1, title: "Running by the Sea", path: "", locked: true, image: "music3_1.jpg")
+            let music4 = Music(type: 1, title: "Running in the Wind", path: "", locked: true, image: "music1_1.jpg")
+            
+            let music5 = Music(type: 1, title: "Running in the Snow", path: "", locked: true, image: "music2_2.jpg")
+            let music6 = Music(type: 1, title: "Running in the Desert", path: "", locked: true, image: "music1_3.jpg")
+            
+            recommendedMusics.append(music1)
+            recommendedMusics.append(music2)
+            recommendedMusics.append(music3)
+            recommendedMusics.append(music4)
+            
+            lockedMusics.append(music5)
+            lockedMusics.append(music6)
+        } else if vcType == WALKING_MUSIC_VC {
+            let music1 = Music(type: 1, title: "test3", path: "", locked: false, image: "music1_3.jpg")
+            let music2 = Music(type: 1, title: "test4", path: "", locked: true, image: "music3_1.jpg")
+            let music3 = Music(type: 1, title: "Running by the Sea", path: "", locked: true, image: "music2_1.jpg")
+            let music4 = Music(type: 1, title: "Running in the Wind", path: "", locked: true, image: "music1_1.jpg")
+            
+            let music5 = Music(type: 1, title: "Running in the Snow", path: "", locked: true, image: "music2_2.jpg")
+            let music6 = Music(type: 1, title: "Running in the Desert", path: "", locked: true, image: "music1_3.jpg")
+            
+            recommendedMusics.append(music1)
+            recommendedMusics.append(music2)
+            recommendedMusics.append(music3)
+            recommendedMusics.append(music4)
+            
+            lockedMusics.append(music5)
+            lockedMusics.append(music6)
+        } else {
+            let music1 = Music(type: 1, title: "test5", path: "", locked: false, image: "music3_1.jpg")
+            let music2 = Music(type: 1, title: "test6", path: "", locked: true, image: "music1_2.jpg")
+            let music3 = Music(type: 1, title: "Running by the Sea", path: "", locked: true, image: "music2_1.jpg")
+            let music4 = Music(type: 1, title: "Running in the Wind", path: "", locked: true, image: "music1_1.jpg")
+            
+            let music5 = Music(type: 1, title: "Running in the Snow", path: "", locked: true, image: "music2_2.jpg")
+            let music6 = Music(type: 1, title: "Running in the Desert", path: "", locked: true, image: "music1_3.jpg")
+            
+            recommendedMusics.append(music1)
+            recommendedMusics.append(music2)
+            recommendedMusics.append(music3)
+            recommendedMusics.append(music4)
+            
+            lockedMusics.append(music5)
+            lockedMusics.append(music6)
+        }
         
     }
     
@@ -105,6 +157,14 @@ extension MusicViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        /*var reusableId: String = "HomeViewCell"
+        if vcType == ALL_MUSIC_VC {
+            reusableId = "HomeViewCell"
+        } else if vcType == RUNNING_MUSIC_VC {
+            reusableId = "RunningViewCell"
+        }*/
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MusicViewCell", for: indexPath) as! MusicViewCell
         
         var music: Music? = nil
@@ -125,6 +185,13 @@ extension MusicViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        /*
+        var reusableId: String = "MusicSectionView"
+        if vcType == ALL_MUSIC_VC {
+            reusableId = "HomeSectionView"
+        } else if vcType == RUNNING_MUSIC_VC {
+            reusableId = "RunningSectionView"
+        }*/
         
         switch kind {
             case UICollectionView.elementKindSectionHeader:
