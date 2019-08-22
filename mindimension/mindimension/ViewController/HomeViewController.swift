@@ -8,18 +8,17 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: MusicViewController {
     
     @IBOutlet weak var titlebar: UIView!
+    @IBOutlet weak var headerView: RoundHeaderView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        initView()
-    }
-    
-    func initView() {
-
+        vcType = ALL_MUSIC_VC
+        createMusicData()
     }
     
     
